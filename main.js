@@ -21,6 +21,16 @@ function loadMenu() {
             font-weight: bold;
             margin-top: 50px;
           }
+          #editTitle {
+            font-size: 24px;
+            margin-bottom: 20px;
+          }
+          #buttonContainer {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-left: 20px;
+          }
           button {
             font-size: 18px;
             padding: 10px 20px;
@@ -43,19 +53,22 @@ function loadMenu() {
       <body>
 
         <div id="title">RetroHax</div>
+        <div id="editTitle">Edit Away Team Score</div>
 
-        <!-- Button to increase the score by 7 -->
-        <button onclick="updateScore(7)">+7 Points</button>
+        <div id="buttonContainer">
+          <!-- Button to increase the score by 7 -->
+          <button onclick="updateScore(7)">+7 Points</button>
 
-        <!-- Button to increase score by 3 -->
-        <button onclick="updateScore(3)">+3 Points</button>
+          <!-- Button to increase score by 3 -->
+          <button onclick="updateScore(3)">+3 Points</button>
+        </div>
 
       </body>
       </html>
     `);
   } else {
     // error handling
-    window.alert("Failed to open popup window. Please check your browser's popup settings.");
+    window.alert("Failed to load menu.");
   }
 }
 loadMenu()
