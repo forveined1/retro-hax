@@ -16,16 +16,18 @@ function loadMenu() {
             margin: 0;
             padding: 0;
           }
-          #title {
-            font-size: 36px;
-            font-weight: bold;
+          .section {
             margin-top: 50px;
           }
-          #editTitle {
+          .title {
+            font-size: 36px;
+            font-weight: bold;
+          }
+          .editTitle {
             font-size: 24px;
             margin-bottom: 20px;
           }
-          #buttonContainer {
+          .buttonContainer {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
@@ -39,10 +41,16 @@ function loadMenu() {
         </style>
         <script>
           // Function to update the score in the parent window
-          function updateScore(amount) {
+          function updateScore(teamIndex, amount) {
             // Check if the parent window and the variable exist
-            if (window.opener && window.opener._xn && window.opener._xn._WE && window.opener._xn._WE[100263] && window.opener._xn._WE[100263].gmlteam_score) {
-              window.opener._xn._WE[100263].gmlteam_score[0] += amount;
+            if (
+              window.opener &&
+              window.opener._xn &&
+              window.opener._xn._WE &&
+              window.opener._xn._WE[100263] &&
+              window.opener._xn._WE[100263].gmlteam_score
+            ) {
+              window.opener._xn._WE[100263].gmlteam_score[teamIndex] += amount;
             } else {
               // Log an error if the variable doesn't exist
               console.error("Failed to update score. Variable not found in the parent window.");
@@ -52,15 +60,30 @@ function loadMenu() {
       </head>
       <body>
 
-        <div id="title">RetroHax</div>
-        <div id="editTitle">Edit Away Team Score</div>
+        <div class="section">
+          <div class="title">RetroHax</div>
+          <div class="editTitle">Edit Away Team Score</div>
 
-        <div id="buttonContainer">
-          <!-- Button to increase the score by 7 -->
-          <button onclick="updateScore(7)">+7 Points</button>
+          <div class="buttonContainer">
+            <!-- Button to increase the away team score by 7 -->
+            <button onclick="updateScore(0, 7)">+7 Points</button>
 
-          <!-- Button to increase score by 3 -->
-          <button onclick="updateScore(3)">+3 Points</button>
+            <!-- Button to increase the away team score by 3 -->
+            <button onclick="updateScore(0, 3)">+3 Points</button>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="title">RetroHax</div>
+          <div class="editTitle">Edit Home Team Score</div>
+
+          <div class="buttonContainer">
+            <!-- Button to increase the home team score by 7 -->
+            <button onclick="updateScore(1, 7)">+7 Points</button>
+
+            <!-- Button to increase the home team score by 3 -->
+            <button onclick="updateScore(1, 3)">+3 Points</button>
+          </div>
         </div>
 
       </body>
@@ -68,7 +91,7 @@ function loadMenu() {
     `);
   } else {
     // error handling
-    window.alert("Failed to load menu.");
+    window.alert("Failed to open popup window. Please check your browser's popup settings.");
   }
 }
-loadMenu()
+loadMenu();
