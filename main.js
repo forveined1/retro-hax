@@ -1,5 +1,5 @@
 function loadMenu() {
-  var popupWindow = window.open('', '_blank', 'width=500,height=400');
+  var popupWindow = window.open('', '_blank', 'width=700,height=400');
   if (popupWindow) {
     // Load the menu by setting the HTML content of the popup window
     popupWindow.document.write(`
@@ -16,16 +16,18 @@ function loadMenu() {
             margin: 0;
             padding: 0;
           }
-          .section {
-            margin-top: 50px;
-          }
           .title {
-            font-size: 36px;
+            font-size: 24px;
             font-weight: bold;
+            margin: 20px 0;
+          }
+          .section {
+            display: inline-block;
+            margin: 20px;
           }
           .editTitle {
-            font-size: 24px;
-            margin-bottom: 20px;
+            font-size: 18px;
+            margin-bottom: 10px;
           }
           .buttonContainer {
             display: flex;
@@ -34,9 +36,9 @@ function loadMenu() {
             margin-left: 20px;
           }
           button {
-            font-size: 18px;
-            padding: 10px 20px;
-            margin: 5px;
+            font-size: 14px;
+            padding: 8px 16px;
+            margin: 3px;
           }
         </style>
         <script>
@@ -60,8 +62,9 @@ function loadMenu() {
       </head>
       <body>
 
+        <div class="title">RetroHax</div>
+
         <div class="section">
-          <div class="title">RetroHax</div>
           <div class="editTitle">Edit Away Team Score</div>
 
           <div class="buttonContainer">
@@ -74,7 +77,6 @@ function loadMenu() {
         </div>
 
         <div class="section">
-          <div class="title">RetroHax</div>
           <div class="editTitle">Edit Home Team Score</div>
 
           <div class="buttonContainer">
