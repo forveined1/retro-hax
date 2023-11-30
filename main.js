@@ -40,6 +40,11 @@ function loadMenu() {
             padding: 8px 16px;
             margin: 3px;
           }
+          input {
+            font-size: 14px;
+            padding: 8px;
+            margin-bottom: 10px;
+          }
         </style>
         <script>
           // Function to update the score in the parent window
@@ -56,6 +61,26 @@ function loadMenu() {
             } else {
               // Log an error if the variable doesn't exist
               console.error("Failed to update score. Variable not found in the parent window.");
+            }
+          }
+
+          // Function to update coach credit in the parent window
+          function updateCoachCredit() {
+            // Get the new value from the input field
+            var newCredit = parseInt(document.getElementById('coachCreditInput').value);
+
+            // Check if the parent window and the variable exist
+            if (
+              window.opener &&
+              window.opener._xn &&
+              window.opener._xn._WE &&
+              window.opener._xn._WE[100002] &&
+              window.opener._xn._WE[100002].gmlcoach_credit
+            ) {
+              window.opener._xn._WE[100002].gmlcoach_credit = newCredit;
+            } else {
+              // Log an error if the variable doesn't exist
+              console.error("Failed to update coach credit. Variable not found in the parent window.");
             }
           }
         </script>
@@ -85,6 +110,18 @@ function loadMenu() {
 
             <!-- Button to increase the home team score by 3 -->
             <button onclick="updateScore(1, 3)">+3 Points</button>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="editTitle">Coach Credit</div>
+
+          <div class="buttonContainer">
+            <!-- Input field for typing the new value -->
+            <input type="number" id="coachCreditInput" placeholder="New Coach Credit" />
+
+            <!-- Button to update the coach credit -->
+            <button onclick="updateCoachCredit()">Update Coach Credit</button>
           </div>
         </div>
 
