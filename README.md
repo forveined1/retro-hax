@@ -11,8 +11,10 @@ Not fully done
 
 # Features
 
-Edit Away Team Score
+Edit Away Team Score ✅
 
-Edit Home Team Score (SOON)
+Edit Home Team Score ✅
 
-Edit Coach Credits (SOON)
+Edit Coach Credits ✅
+
+Edit Player Stats ⏳ (soon)
