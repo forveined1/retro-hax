@@ -44,10 +44,10 @@ function loadMenu() {
 
         <div id="title">RetroHax</div>
 
-        <!-- Button to increment score by 7 -->
+        <!-- Button to increase the score by 7 -->
         <button onclick="updateScore(7)">+7 Points</button>
 
-        <!-- Button to increment score by 3 -->
+        <!-- Button to increase score by 3 -->
         <button onclick="updateScore(3)">+3 Points</button>
 
       </body>
