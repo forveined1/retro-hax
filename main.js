@@ -121,7 +121,7 @@ function loadMenu() {
             <input type="number" id="coachCreditInput" placeholder="New Coach Credit" />
 
             <!-- Button to update the coach credit -->
-            <button onclick="updateCoachCredit()">Update Coach Credit</button>
+            <button onclick="updateCoachCredit()">Update Coach Credits</button>
           </div>
         </div>
 
